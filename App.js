@@ -36,7 +36,6 @@ const DATA = [
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
     title: 'First Item',
   },
-  
 ];
 
 export default App = () => {
@@ -68,31 +67,54 @@ export default App = () => {
       <View style={{flex: 2}}>
         <View
           style={{
-            
-            justifyContent: 'space-between',
-            margin: 15,
-            marginTop: 120,
+            flex: 1,
+            justifyContent: 'flex-end',
+            // margin: 15,
+            // marginTop: '40%',
+            padding: 30,
+           // backgroundColor: 'red',
           }}>
-          <Text style={{color: '#000000', fontSize: 18}}>
-            Welcome to connect{' '}
-            <Text style={{color: '#0070FC', opacity: 100}}>{username}!</Text>
-          </Text>
+          
         </View>
-        <View>
-          <Text
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'flex-end',
+            // margin: 15,
+            //marginTop: 50,
+            padding: 30,
+            // marginBottom:60,
+            
+          }}>
+          <View
             style={{
-              justifyContent: 'space-between',
-              margin: 15,
-              marginTop: -5,
+              alignItems: 'flex-start',
+              flexDirection: 'row',
+              marginBottom: 30,
             }}>
+            
+            <Text style={{color: '#000000', fontSize: 18}}>
+              Welcome to connect{' '}
+              <Text style={{color: '#0070FC', opacity: 100}}>{username}!</Text>
+            </Text>
+          </View>
+          <Text
+            style={
+              {
+                //flex:2,
+                //justifyContent: 'space-between',
+                // margin: 15,
+                //marginTop: -5,
+              }
+            }>
             You have access to the following locations. You can manage your
             locations in the “locations” option given in the navigation.
           </Text>
         </View>
         <View
           style={{
-          
-            flexDirection: 'row',
+            flex: 2,
+            // flexDirection: 'row',
             justifyContent: 'flex-end',
             alignItems: 'flex-end',
             marginEnd: 15,
@@ -105,14 +127,40 @@ export default App = () => {
 
       <View
         style={{
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: 'red',
-          
+          flex: 1.3,
+          //justifyContent: 'center',
+          //alignItems: 'flex-end',
+         // backgroundColor: 'red',
+         
         }}>
-        <SwipeablePanel {...panelProps} isActive={isPanelActive}>
-          <FlatList
+        <SwipeablePanel
+          barStyle={{backgroundColor: '#2F6EF329'}}
+          style={{
+            shadowOffset: {width: 0, height: 2},
+            shadowColor: 'red',
+            shadowOffset: {width: 0, height: 2},
+            shadowOpacity: 0.9,
+            shadowRadius: 2,
+            //width:50,
+            //justifyContent:'flex-end'
+            //alignItems:'center',
+            //justifyContent: 'flex-end',
+            //flexDirection:'row'
+            //marginBottom:100
+          }}
+          //scrollViewProps={{backgroundColor:'red'}}
+          
+          {...panelProps}
+          isActive={isPanelActive}>
+            
+            <View style={{alignItems:'center',justifyContent:'center'}}><Text>hello</Text>
+            
+            
+            
+            
+            </View>
+            
+          {/* <FlatList
             data={[{ title: 'Title Text', key: 'item1' },{ title: 'Title Text', key: 'item2' }]}
             renderItem={({item}) => (
               <View style={{alignItems:'center',padding:10,backgroundColor:''}}>
@@ -120,7 +168,7 @@ export default App = () => {
               </View>
             )}
             keyExtractor={item => item.id}
-          />
+          /> */}
           <TouchableOpacity style={styles.VerifyButton}>
             <Text style={styles.VerifyButtonText}>CONTINUE</Text>
           </TouchableOpacity>
@@ -142,10 +190,11 @@ const styles = StyleSheet.create({
     height: 45,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: '1%',
+    //marginTop: '50%',
     backgroundColor: 'rgba(14, 0, 113, 1)',
     justifyContent: 'center',
     alignItems: 'center',
     marginLeft: 20,
+    top:200
   },
 });
